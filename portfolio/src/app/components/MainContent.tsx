@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Compass, Palette, Search, FlaskConical, Figma } from 'lucide-react';
 
 const ROLES = [
   "UX/UI Designer",
@@ -137,20 +138,20 @@ export function About() {
            I am a passionate full stack engineer skilled in building seamless and scalable web and mobile applications across diverse technologies, driven by a constant pursuit of elegant, efficient solutions that empower users. Combining a strong foundation in both frontend and backend development, I thrive in collaborative environments where innovation, problem-solving, and continuous learning fuel impactful digital experiences.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
-              <div className="text-slate-300 text-sm">+</div>
-              <div className="text-white font-semibold text-lg">Google Review</div>
-            </div>
-            <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
-              <div className="text-slate-300 text-sm">1</div>
-              <div className="text-white font-semibold text-lg">Years Experience</div>
-            </div>
-            <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
-              <div className="text-slate-300 text-sm"></div>
-              <div className="text-white font-semibold text-lg">Award Winning</div>
-            </div>
-          </div>
+      <div className="flex flex-wrap gap-4">
+  <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
+    <div className="text-slate-300 text-sm">Pending</div>
+    <div className="text-white font-semibold text-lg">Completed Internship</div>
+  </div>
+  <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
+    <div className="text-slate-300 text-sm">4+</div>
+    <div className="text-white font-semibold text-lg">Projects Built</div>
+  </div>
+  <div className="flex-1 min-w-[160px] bg-[#071b2a] p-5 rounded-md border border-slate-800">
+    <div className="text-slate-300 text-sm">🌟</div>
+    <div className="text-white font-semibold text-lg">Team Player</div>
+  </div>
+</div>
 
           <div>
             <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white rounded-full shadow">
@@ -178,17 +179,18 @@ export function Skills() {
     { name: "Tailwind CSS", icon: "◎" },
   ];
 
+  // <--- MAIN FIX HERE: icon is a JSX ELEMENT, not a component reference!
   const product = [
-    { name: "Product Management", icon: "🧭" },
-    { name: "UX/UI Design", icon: "🎨" },
-    { name: "UX Research", icon: "🔍" },
-    { name: "QA", icon: "🧪" },
+    { name: "Product Management", icon: <Compass size={18} /> },
+    { name: "UX/UI Design", icon: <Palette size={18} /> },
+    { name: "UX Research", icon: <Search size={18} /> },
+    { name: "QA", icon: <FlaskConical size={18} /> },
   ];
 
   const tools = [
     { name: "VS Code", icon: "" },
     { name: "GitHub", icon: "" },
-    { name: "Figma", icon: "🎛" },
+    { name: "Figma", icon: <Figma size={16} /> },  // JSX element
     { name: "Adobe Illustrator", icon: "Ai" },
     { name: "Adobe Photoshop", icon: "Ps" },
     { name: "DBeaver", icon: "DB" },

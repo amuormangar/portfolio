@@ -16,7 +16,15 @@ const projects: Project[] = [
     img: "/homepage.jpg",
     tags: ["Kotlin", "SQL"],
     year: "2025",
-    url: "#ecorise",
+    url: "https://appetize.io/app/b_glcxlu5daiyhvpztgrabcytb5y", 
+  },
+  {
+    title: "EcoRise Dashboard",
+    desc: "Admin dashboard for EcoRise — enables data analysis, challenge management, and community oversight.",
+    img: "/ecorise.png",
+    tags: ["React", "TypeScript", "Next.js"],
+    year: "2025",
+    url: "https://ecorise-react-app.vercel.app/dashboard", 
   },
   {
     title: "MaliPoFlex (App)",
@@ -24,7 +32,7 @@ const projects: Project[] = [
     img: "/malipoflex-app.png",
     tags: ["Kotlin", "Postgres"],
     year: "2025",
-    url: "#malipoflex-app",
+    url: "https://your-link-to-malipoflex-app.com", 
   },
   {
     title: "MaliPoFlex (Dashboard)",
@@ -32,7 +40,31 @@ const projects: Project[] = [
     img: "/Dashboard.png",
     tags: ["Next.js", "React", "Tailwind"],
     year: "2025",
-    url: "#malipoflex-dashboard",
+    url: "https://your-link-to-malipoflex-dashboard.com", 
+  },
+  {
+    title: "  Unkindle Magazine",
+    desc: "Collaborative digital magazine with biographies, fun facts, and articles.",
+    img: "/magazine.png",
+    tags: ["Figma"],
+    year: "2025",
+    url: "https://your-link-to-group-magazine.com", 
+  },
+  {
+    title: "Project API",
+    desc: "RESTful API backend for authentication, data streaming, and business logic powering multiple frontend clients.",
+    img: "/projectapi.png",
+    tags: ["Express", "Node.js", "JWT"],
+    year: "2025",
+    url: "https://ecorise-7761ef090ee3.herokuapp.com/api/", 
+  },
+  {
+    title: "Restaurant Website",
+    desc: "A modern multi-page website for a local restaurant with booking, menu display, and responsive UI.",
+    img: "/restaurant.png",
+    tags: ["Js", "HTML", "CSS"],
+    year: "2025",
+    url: "https://strong-axolotl-284c9b.netlify.app/",
   },
 ];
 
@@ -78,12 +110,20 @@ export default function ProjectsGrid(){
               </div>
 
               <div className="mt-6 flex items-center justify-between">
-                <a
-                  href={proj.url}
-                  className="inline-flex items-center gap-2 text-sm px-3 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-full shadow"
-                >
-                  View Project
-                </a>
+                {proj.url ? (
+                  <a
+                    href={proj.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm px-3 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-full shadow"
+                  >
+                    View Project
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2 text-sm px-3 py-2 bg-gray-600 text-white rounded-full shadow opacity-50 cursor-not-allowed">
+                    No link
+                  </span>
+                )}
                 <div className="text-sm text-slate-400">{proj.year}</div>
               </div>
             </div>
